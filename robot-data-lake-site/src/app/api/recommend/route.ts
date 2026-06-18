@@ -12,7 +12,7 @@ import { rateLimit, clientKey } from "@/lib/ratelimit";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const MODEL = process.env.RECOMMEND_MODEL || "claude-haiku-4-5-20251001";
+const MODEL = process.env.RECOMMEND_MODEL || "claude-sonnet-4-6";
 
 // Customer-hygiene system prompt: the model recommends customer-safe datasets
 // only. filters use customer-facing keys (events slug / weather / projects /

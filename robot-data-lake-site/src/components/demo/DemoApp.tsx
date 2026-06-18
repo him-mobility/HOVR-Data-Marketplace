@@ -42,7 +42,7 @@ export default function DemoApp() {
   const [view, setView] = useState<{ n: number; total: number }>({ n: 0, total: 0 });
   const [picked, setPicked] = useState<number | null>(null);
   const [modal, setModal] = useState(false);
-  const [show, setShow] = useState<Toggle>({ map: true, charts: false, ledger: false });
+  const [show, setShow] = useState<Toggle>({ map: true, charts: true, ledger: true });
 
   const query = useMemo(() => qs(f), [f]);
 
