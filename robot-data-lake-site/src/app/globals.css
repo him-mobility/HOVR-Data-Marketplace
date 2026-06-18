@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Noto Sans Mono", monospace;
+  --him-navy:#001b5c; --him-purple:#6a258a; --him-blue:#1e95d4; --him-teal:#00a9a9;
+  --ink:#0f1722; --muted:#5b6573; --line:#e3e8f0; --surface:#ffffff; --surface-2:#f5f7fb;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    color: var(--ink); background: var(--surface); font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    line-height: 1.7; word-break: keep-all; overflow-wrap: break-word;
+  }
+  h1,h2,h3,h4 { letter-spacing:-0.01em; line-height:1.2; color:var(--him-navy); font-weight:700; }
+  .on-navy h1, .on-navy h2, .on-navy h3, .on-navy h4 { color:#fff; }
+  a { color: var(--him-navy); }
+  ::selection { background:#cfe0f5; }
+  :focus-visible { outline:2px solid var(--him-blue); outline-offset:2px; border-radius:3px; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .mono { font-family: var(--font-mono); font-feature-settings: "tnum" 1; }
+  .container-x { width:100%; max-width:1200px; margin-inline:auto; padding-inline:1.25rem; }
+  .eyebrow { font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--him-blue); }
+  .hairline { border-color: var(--line); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration:0.001ms!important; animation-iteration-count:1!important; transition-duration:0.001ms!important; }
+}
+@keyframes fadeup { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.animate-fadeup { animation: fadeup 0.3s ease-out both; }
